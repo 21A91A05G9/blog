@@ -37,7 +37,7 @@ export default function Card(props) {
   return (
     <div class="col-md-3 my-3">
       <article class="card cards" onClick={handleCard}>
-        <img class="card__background" src={`http://localhost:5002/${props.image}`} alt="" width="1920" height="2193" />
+        <img class="card__background" src={`https://blog-fjap.vercel.app/${props.image}`} alt="" width="1920" height="2193" />
         <div class="card__content | flow">
           <h4 class="card__title mb-3">{titleText(props.title, 20)}</h4>
           <p class="card__description ">{Text(props.des, 50)}</p>

@@ -24,11 +24,11 @@ export default function Like(props) {
         
       }
      console.log("blogdata id is", id,newBlogData.title);
-     axios.get('http://localhost:5002/getId', { params: {title: newBlogData.title} }).then((res) => {  
+     axios.get('https://blog-fjap.vercel.app/getId', { params: {title: newBlogData.title} }).then((res) => {  
       setId(res.data.id);
       console.log("blogdata id is", id);
       if (id !== undefined) {
-        axios.put('http://localhost:5002/updateblog/' + id, newBlogData)
+        axios.put('https://blog-fjap.vercel.app/updateblog/' + id, newBlogData)
           .then((res) => {
             console.log("updated", res.data.updatedBlogData);
           });

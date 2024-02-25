@@ -13,7 +13,7 @@ export default function Register() {
     )
     const  handleReg = (e) => {
         e.preventDefault(); 
-        axios.post('http://localhost:5002/register',formdata).then((res)=>{
+        axios.post('https://blog-fjap.vercel.app/register',formdata).then((res)=>{
                 alert(res.data.msg)
                 
                 if(res.data.msg==='successfully registered'){

@@ -5,7 +5,7 @@ export default function singleBlog(props) {
     <div className='row mx-4 mt-4'>
       <h2 className='my-4'>{props.title}</h2>
       <div className='singleimg  col-md-5'>
-        <img className='col-12' src={`http://localhost:5002/${props.image}`} alt="" />
+        <img className='col-12' src={`https://blog-fjap.vercel.app/${props.image}`} alt="" />
       </div>
       <div className='col-md-6'>
         <div className='single-des my-1'>{props.des}</div>

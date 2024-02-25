@@ -5,7 +5,7 @@ export default function Sidebar() {
   const [category,setCategory] = useState("");
   useEffect(()=>{
     console.log(category)
-    axios.get('http://localhost:5002/getCategory', { params:{key:category} }).then((res)=>{ 
+    axios.get('https://blog-fjap.vercel.app/getCategory', { params:{key:category} }).then((res)=>{ 
         
     })
   },[category])

@@ -18,7 +18,7 @@ export default function Createblog() {
     const [img,setImg] = useState(image)
     useEffect(() => {
         if (id !== undefined) {
-            axios.get('http://localhost:5002/getuser/' + id)
+            axios.get('https://blog-fjap.vercel.app/getuser/' + id)
             .then((res) => {
                 setName(res.data.userName);
                 console.log("setting name", name);
@@ -53,7 +53,7 @@ export default function Createblog() {
         formData.append('by', blogdata.by);
         
         axios
-          .post('http://localhost:5002/newblog', formData).then((res) => {
+          .post('https://blog-fjap.vercel.app/newblog', formData).then((res) => {
             // alert(res.data.msg);
             if (res.data.msg === 'Blog created successfully') {
               setFlag(1)

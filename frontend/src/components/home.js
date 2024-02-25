@@ -20,28 +20,28 @@ export default function Home() {
   let [blogdata, setBlogdata] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:5002/getBlogData').then((res) => {
+    axios.get('https://blog-fjap.vercel.app/getBlogData').then((res) => {
       setBlogdata(res.data.blogdata);
     });
   }, []);
 
   useEffect(() => {
     if (id !== undefined) {
-      axios.get('http://localhost:5002/getuser/' + id).then((res) => {
+      axios.get('https://blog-fjap.vercel.app/getuser/' + id).then((res) => {
         setUsr(res.data.userName);
       });
     }
   }, [id, usr]); // Include 'usr' in the dependency array
 
   useEffect(() => {
-    axios.get('http://localhost:5002/getSearchData', { params: { key: key } }).then((res) => {
+    axios.get('https://blog-fjap.vercel.app/getSearchData', { params: { key: key } }).then((res) => {
       setSearchResult(res.data.searchdata);
       setTxt(`Looking result for "${key}"`);
     });
   }, [key]);
 
   useEffect(() => {
-    axios.get('http://localhost:5002/getCategory', { params: { key: category } }).then((res) => {
+    axios.get('https://blog-fjap.vercel.app/getCategory', { params: { key: category } }).then((res) => {
       setSearchResult(res.data.categoryData);
       setTxt(`${category}  Blogs`);
     });
