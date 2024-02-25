@@ -1,8 +1,8 @@
 import React from 'react'
-import Logo from '../images/BL.jpg'
+// import Logo from '../images/BL.jpg'
 import {Link} from 'react-router-dom'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {faHomeUser,faUser,faCamera} from '@fortawesome/free-solid-svg-icons'
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+// import {faHomeUser,faUser,faCamera} from '@fortawesome/free-solid-svg-icons'
 export default function UserNavbar(props) {
   
   return (
@@ -10,7 +10,7 @@ export default function UserNavbar(props) {
     <div>
     <nav class="navbar bg-body-tertiary fixed-top">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="/">
          
           {/* <img src={Logo} alt="Logo" height={20} width={20} />    &nbsp; */}
           <span style={{color:'#f6efe0'}}><span style={{color:"var(--brand-color)"}}>B</span>logLite</span>

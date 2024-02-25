@@ -1,20 +1,20 @@
 import React, { useState ,useEffect} from 'react'
 import axios from 'axios'
-import { useNavigate, useParams ,Link} from 'react-router-dom'
+import {useParams } from 'react-router-dom'
 import image from '../images/upload.jpg'
 import UserNavbar from './userNavbar'
 export default function Createblog() {
     
 
-    const nav = useNavigate()
+    // const nav = useNavigate()
     const [name, setName] = useState("");
     const { id } = useParams();
     console.log("id", id);
-    const[msgcolor,setMsgColor] = useState("")
-    const [op,setOp] =useState()
+    // const[msgcolor,setMsgColor] = useState("")
+    // const [op,setOp] =useState()
     const [flag,setFlag] = useState(0)
-    const [blogId,setBlogId]= useState(undefined);
-    const [imageurl,setImageurl] = useState("")
+    // const [blogId,setBlogId]= useState(undefined);
+    // const [imageurl,setImageurl] = useState("")
     const [img,setImg] = useState(image)
     useEffect(() => {
         if (id !== undefined) {
@@ -24,7 +24,7 @@ export default function Createblog() {
                 console.log("setting name", name);
             });
         }
-    }, [id]); 
+    }, [id,name]); 
 
     const [blogdata, setBlogdata] = useState({
         title: '',
@@ -57,8 +57,8 @@ export default function Createblog() {
             // alert(res.data.msg);
             if (res.data.msg === 'Blog created successfully') {
               setFlag(1)
-              setImageurl(res.data.imagePath)
-              setBlogId(res.data.newBlogData._id);
+              // setImageurl(res.data.imagePath)
+              // setBlogId(res.data.newBlogData._id);
               
             }
           })

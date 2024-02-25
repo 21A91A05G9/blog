@@ -6,9 +6,8 @@ import path from "path";
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 import multer from "multer";
-import register from "./models/register";
-import blogData from "./models/blogdata";
-import blogdata from "./models/blogdata";
+import register from "./models/register.js";
+import blogData from "./models/blogdata.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -23,7 +22,7 @@ app.use(cors(
 ))
 app.use('/images', express.static(path.join(__dirname, 'images')));
 
-mongoose.connect('mongodb+srv://vasavi_08:NfjjB5FPcYmmT3pe@cluster0.yhpakpu.mongodb.net/DriveReady?retryWrites=true&w=majority')
+mongoose.connect('mongodb+srv://vasavi_08:FJ2ZnHJjoi4ofphA@cluster0.yhpakpu.mongodb.net/DriveReady?retryWrites=true&w=majority')
 .then(()=> app.listen(5002))
 .then(()=>console.log("Connected to Database & Listening to localhost 5002"))
 .catch((err)=>console.log(err));
