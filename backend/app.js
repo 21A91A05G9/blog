@@ -14,7 +14,13 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const app=express();
 app.use(bodyParser.json())
-app.use(cors())
+app.use(cors(
+  {
+    origin:["https://lite-blog-app.vercel.app"],
+    methods:["POST","GET"],
+    credentials: true
+  }
+))
 app.use('/images', express.static(path.join(__dirname, 'images')));
 
 mongoose.connect('mongodb+srv://vasavi_08:NfjjB5FPcYmmT3pe@cluster0.yhpakpu.mongodb.net/DriveReady?retryWrites=true&w=majority')
